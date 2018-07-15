@@ -1,4 +1,6 @@
 console.log('index.js is running.');
+const port = process.env.PORT||8080;
+
 const express = require('express');
 const headerinfo = require('./headerinfo');
 const hbs = require('hbs');
@@ -14,6 +16,6 @@ app.get('/', (req,res)=>{
     res.render('index', headerinfo.elements());
 });
 
-app.listen(8080,()=>{
-console.log('server running at 8080')
+app.listen(port,()=>{
+console.log(`server is running port ${port}`);
 });
